@@ -1,132 +1,108 @@
-Shaka Game
-A modular, object-oriented multiplayer game focused on number-finding challenges.
+# Number Rush Game
 
-Key Features
-Supports two-player local gameplay
+An object-oriented, modular multiplayer game focused on finding numbers.
 
-Online multiplayer for up to 10 participants
+## Features
 
-Multi-language interface
+- Two-player local mode
+- Online multiplayer with support for up to 10 players
+- Multiple language options
+- Custom key bindings
+- Clean structure with reusable components
 
-Customizable key bindings
+## Prerequisites
 
-Clean, modern architecture with reusable modules
+- [Bun](https://bun.sh) or [Node.js](https://nodejs.org/) – Required to run and manage JavaScript packages
+- A modern browser
 
-Requirements
-Bun or Node.js – Required to run the project and manage dependencies
+## Installation
 
-A modern web browser
+1. Clone the project repository:
+   ```bash
+   git clone https://github.com/yourusername/number-rush-game.git
+   cd number-rush-game
+   ```
 
-Getting Started
-Clone the repository:
+2. Install the dependencies:
+   ```bash
+   npm install
+   # OR
+   bun install
+   ```
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/shaka-game.git
-cd shaka-game
-Install necessary packages:
+## Running the Game
 
-bash
-Copy
-Edit
-npm install
-# OR
-bun install
-Running the Game Locally
-To launch the development environment with live reloading:
+### Development Mode (Local)
 
-bash
-Copy
-Edit
+Start the development server with live reload:
+```bash
 npm run dev
 # OR
 bun run dev
-The game will be served via Vite at http://localhost:3000.
+```
 
-Multiplayer Server
-To start the server for online play:
+Access the game at http://localhost:3000 via your browser.
 
-bash
-Copy
-Edit
+### Multiplayer Server
+
+Launch the server for online play:
+```bash
 npm run server
 # OR
 node server/index.js
-This initializes the Socket.io server for real-time multiplayer gameplay.
+```
 
-Gameplay Instructions
-Local Mode
-Open the game in your browser
+This starts a Socket.io server to handle multiplayer connections.
 
-Enter names for both players
+## How to Play
 
-Adjust controls if needed
+### Local Mode
+1. Launch the game in your browser
+2. Input names for each player
+3. Modify controls if preferred
+4. Press your confirm keys to get ready
+5. Locate and click numbers in order
 
-Press the confirmation keys to begin
+### Online Multiplayer
+1. Select "Play Multiplayer" from the main screen
+2. Create a room or join one using a room code
+3. Enter your name and set your controls
+4. Wait for others to join
+5. Click "Ready" when set
+6. Compete to find numbers in sequence and score
 
-Find and click numbers in order
+## Building for Production
 
-Online Multiplayer Mode
-Select "Play Multiplayer" from the main menu
-
-Either create a new room or join one using a room code
-
-Input your name and configure controls
-
-Wait for others to join
-
-Press "Ready" to start the game
-
-Score by clicking numbers in the correct order
-
-Production Build
-To compile the game for deployment:
-
-bash
-Copy
-Edit
+Generate a production-ready version of the game:
+```bash
 npm run build
 # OR
 bun run build
-The production-ready files will be placed in the dist directory.
+```
 
-Folder Overview
-src/ – Main source code
+The final build will be saved in the `dist` directory.
 
-main.js – Local game entry point
+## Project Structure
 
-styles/ – Styling files
+- `src/` – Game source code
+  - `main.js` – Local mode entry file
+  - `styles/` – CSS files
+  - `utils/` – Core logic for local mode
+    - `game.js` – Main game engine
+    - `player.js` – Player behavior
+    - `board.js` – Gameboard logic
+    - `translator.js` – Manages language translations
+    - `settings.js` – Handles game settings
+    - `ui-manager.js` – Manages UI elements
+  - `multiplayer/` – Multiplayer mode files
+    - `main.js` – Multiplayer entry point
+    - `game.js` – Multiplayer logic
+    - `player.js` – Multiplayer player class
+    - `board.js` – Multiplayer board functionality
+    - `ui-manager.js` – Multiplayer UI control
+- `server/` – Multiplayer backend
+  - `index.js` – Socket.io server code
 
-utils/ – Core game modules for local mode
+## License
 
-game.js – Game logic controller
-
-player.js – Handles player data and input
-
-board.js – Grid and number layout
-
-translator.js – Manages multilingual support
-
-settings.js – Game settings manager
-
-ui-manager.js – Controls user interface
-
-multiplayer/ – Code for online multiplayer
-
-main.js – Multiplayer entry file
-
-game.js – Multiplayer game logic
-
-player.js – Multiplayer player logic
-
-board.js – Multiplayer game board logic
-
-ui-manager.js – UI management for online mode
-
-server/ – Multiplayer server-side logic
-
-index.js – WebSocket server using Socket.io
-
-License
-Licensed under the MIT License.
+MIT
